@@ -8,12 +8,12 @@
 
 								<div class="header">
 <?php if( is_single() || is_page() ): ?>
-									<h1><?php the_title();?></h1>
 									<?php if (has_post_thumbnail()): ?>
 										<span class="featured-image">
 																	<?php the_post_thumbnail('large') ?>
 															</span>
 									<?php endif; ?>
+									<h1><?php the_title();?></h1>
 <?php elseif( !is_front_page() ): ?>
 									<h1><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
 <?php else:?>
