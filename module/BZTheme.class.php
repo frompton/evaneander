@@ -44,7 +44,7 @@
 			*/
 			public function wp_setup_resources( $jQueryVersion = '1.9.0' ){
 				wp_enqueue_style( 'normalize-css', get_bloginfo( 'template_url' ) . '/style/normalize.css', false, '1.0' );
-				wp_enqueue_style( 'common-css', get_bloginfo( 'template_url' ) . '/style/common.css', false, '1.1' );
+				wp_enqueue_style( 'common-css', get_bloginfo( 'template_url' ) . '/style/common.css', false, '1.2' );
 			}
 
 		}

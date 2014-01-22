@@ -70,10 +70,15 @@ h3,h4{
 
 /* HEADER */
 #logo {
-	font-size: 34px;
 	color: #777;
 	text-transform: uppercase;
 }
+#logo h1,
+#logo p {
+    margin: 0;
+    font-size: 34px;
+}
+#logo h2,
 #logo .tagline {
 	display: block;
 	font-size: 28px;
@@ -121,9 +126,6 @@ h3,h4{
 }
 .content li {
 	line-height: 30px;
-}
-.header h2 {
-	font-size: 19px;
 }
 .featured-image {
     float: right;

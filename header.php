@@ -8,7 +8,13 @@
 <html <?php language_attributes();?> class="js-disabled">
 	<head>
 		<meta charset="<?php bloginfo( 'charset' );?>">
-		<title><?php wp_title( '--', true, 'right' ); ?> <?php bloginfo( 'name' ); ?></title>
+		<title>
+            <?php if (is_front_page()): ?>
+                <?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>
+            <?php else: ?>
+                <?php wp_title( '--', true, 'right' ); ?> <?php bloginfo( 'name' ); ?>
+            <?php endif; ?>
+        </title>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' );?>">
 <?php if ( is_home() || is_front_page() ):?>
 		<meta name="description" content="<?php bloginfo( 'description' );?>">
@@ -40,8 +46,13 @@
 						<a href="<?php echo home_url( '/' );?>">
 							<img src="<?php echo get_stylesheet_directory_uri() ?>/image/logo.gif" alt="Logo Evaneander.se">
 						</a>
-						<?php echo esc_attr( get_bloginfo( 'name', 'display' ) );?>
-						<span class="tagline"><?php bloginfo( 'description' ); ?></span>
+                        <?php if (is_front_page()): ?>
+                            <h1><?php echo esc_attr( get_bloginfo( 'name', 'display' ) );?></h1>
+                            <h2 class="tagline"><?php bloginfo( 'description' ); ?></h2>
+                        <?php else: ?>
+                            <p><?php echo esc_attr( get_bloginfo( 'name', 'display' ) );?></p>
+                            <span class="tagline"><?php bloginfo( 'description' ); ?></span>
+                        <?php endif; ?>
 					</div>
 				</div>
 			</div><!-- #page-header -->
